@@ -32,7 +32,8 @@ namespace VIN_DIZEL
                 {
 
                     dict = slovo;
-                    MyBox.Text = "https://sales.mercedes-cardinal.ru/model/" + slovo["ModelSysName"] + "/" + slovo["Id"];
+                    MyBox.Text = slovo["Url"];
+                    //MyBox.Text = "https://sales.mercedes-cardinal.ru/model/" + slovo["ModelSysName"] + "/" + slovo["Id"];
                     listBox1.DataSource = dict.Keys.ToList();
                     dict.Count();
                     //При изменении индекса выбранного элемента списка показываем соответствующий элемент словаря
@@ -180,6 +181,14 @@ namespace VIN_DIZEL
                 url = "https://cars.mercedes-benz.ru/api/Cars/GetList?";
                 Task.Run(My_House);
             }
+        }
+
+        private void Main_menu_Load(object sender, EventArgs e)
+        {
+            radioButton1.Checked = true;
+            button2.PerformClick();
+
+            button1.PerformClick();
         }
     }
 }
